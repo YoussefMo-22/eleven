@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>١١/١١ — بحبك لآخر العمر ♥</title>
+  <meta name="description" content="هدية يوم ١١/١١ لأغلى وأجمل إنسانة في حياتي — هفضل أحبك للأبد" />
+  <meta name="theme-color" content="#6B0F1A" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <!-- الخطوط العربية: عارف رقعة، أميري، والقاهرة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="locked">
+
+  <!-- رسومات الورد والزخارف النباتية -->
+  <svg width="0" height="0" style="position:absolute; visibility:hidden;" aria-hidden="true">
+    <defs>
+      <!-- وردة عنابي متفتحة -->
+      <g id="burgundy-rose-bloom">
+        <path d="M60 105 C42 95, 22 85, 14 68 C28 65, 45 74, 58 92 Z" fill="#4A5D4E" opacity="0.85" />
+        <path d="M62 102 C82 94, 100 80, 108 62 C92 60, 76 72, 62 90 Z" fill="#3B4D3F" opacity="0.85" />
+        <path d="M60 95 C60 112, 58 122, 55 130" stroke="#B88B58" stroke-width="2.2" fill="none"
+          stroke-linecap="round" />
+        <path d="M60 20 C35 18, 18 38, 24 62 C29 82, 48 94, 60 94 C72 94, 91 82, 96 62 C102 38, 85 18, 60 20 Z"
+          fill="#6B0F1A" />
+        <path d="M60 24 C40 24, 26 40, 30 60 C34 78, 50 88, 60 88 C70 88, 86 78, 90 60 C94 40, 80 24, 60 24 Z"
+          fill="#871625" />
+        <path d="M60 32 C45 32, 35 44, 38 58 C41 72, 52 79, 60 79 C68 79, 79 72, 82 58 C85 44, 75 32, 60 32 Z"
+          fill="#9E2132" />
+        <path d="M60 39 C49 39, 43 47, 45 57 C47 66, 54 71, 60 71 C66 71, 73 66, 75 57 C77 47, 71 39, 60 39 Z"
+          fill="#6B0F1A" />
+        <path class="draw-path"
+          d="M60 45 C53 45, 49 51, 52 57 C55 63, 64 63, 67 57 C70 50, 63 42, 55 44 M38 52 C44 36, 76 36, 82 52 M32 64 C45 84, 75 84, 88 64"
+          stroke="#E6C5C8" stroke-width="1.5" fill="none" stroke-linecap="round" />
+        <circle cx="60" cy="54" r="3.5" fill="#F3C68F" />
+      </g>
+
+      <!-- زخرفة ركنية بالورد -->
+      <g id="corner-botanical">
+        <path d="M8 140 C8 72, 65 12, 145 8" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.65" />
+        <path d="M18 120 C24 76, 70 28, 122 18" stroke="#B88B58" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+        <circle cx="44" cy="44" r="12" fill="#6B0F1A" />
+        <path d="M38 42 C41 36, 48 36, 50 42 C52 48, 44 52, 39 47 Z" fill="#9E2132" />
+        <circle cx="44" cy="44" r="3" fill="#F3C68F" />
+        <path d="M28 66 C16 62, 14 48, 26 52 C32 54, 34 62, 28 66 Z" fill="currentColor" opacity="0.7" />
+        <path d="M66 28 C62 16, 48 14, 52 26 C54 32, 62 34, 66 28 Z" fill="currentColor" opacity="0.7" />
+        <path d="M22 92 C10 90, 10 78, 22 80 C28 82, 28 90, 22 92 Z" fill="#B88B58" opacity="0.75" />
+        <path d="M92 22 C90 10, 78 10, 80 22 C82 28, 90 28, 92 22 Z" fill="#B88B58" opacity="0.75" />
+      </g>
+    </defs>
+  </svg>
+
+  <!-- طبقة ملمس الورق وشريط التقدم -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- كانفاس بتلات الورد المتحركة -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- الموسيقى الخلفية (تعمل تلقائياً في المقطع المحدد من 2:30 إلى 3:45) -->
+  <audio id="bg-audio" preload="auto">
+    <source src="song/Keep%20On%20Loving%20You%20-%20Cigarettes%20After%20Sex.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ========================================================================
+       شاشة البداية (بوابة ١١/١١ الرومانسية)
+       ======================================================================== -->
+  <section class="intro-gate" id="intro-gate" aria-label="مقدمة هدية ١١/١١">
+    <svg class="intro-corner intro-corner--tl" viewBox="0 0 160 160">
+      <use href="#corner-botanical" />
+    </svg>
+    <svg class="intro-corner intro-corner--tr" viewBox="0 0 160 160">
+      <use href="#corner-botanical" />
+    </svg>
+    <svg class="intro-corner intro-corner--bl" viewBox="0 0 160 160">
+      <use href="#corner-botanical" />
+    </svg>
+    <svg class="intro-corner intro-corner--br" viewBox="0 0 160 160">
+      <use href="#corner-botanical" />
+    </svg>
+
+    <div class="intro-inner">
+      <div class="intro-date-badge">
+        <span>✦</span>
+        <span>يوم مميز · ١١ / ١١</span>
+        <span>✦</span>
+      </div>
+
+      <div class="intro-clock" aria-label="١١:١١">
+        ١١<span class="colon">:</span>١١
+      </div>
+
+      <h1 class="intro-ar-title">
+        في يوم ١١/١١.. كل الناس بتتمنى أمنية، وأنا أمنيتي الوحيدة كانت دايمًا إنتي ♥
+      </h1>
+
+      <p class="intro-ar-sub">
+        عملتلك المكان ده مخصوص عشان أقولك قد إيه بحبك، وقد إيه وجودك في حياتي هو أحلى هدية من ربنا ليا.. دوسي على الختم
+        وافتحي هديتك يا روحي
+      </p>
+
+      <button class="wax-seal-btn" id="open-gift-btn" type="button" aria-label="افتحي هديتك">
+        <span class="wax-seal-circle">
+          <svg width="48" height="48" viewBox="0 0 120 120">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+        </span>
+        <span class="wax-seal-label">
+          <span>افتحي هديتك يا روحي ♥</span>
+          <small>اضغطي هنا عشان تبدأ حكايتنا</small>
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       زر التحكم في الموسيقى (عائم وبسيط للموبايل)
+       ======================================================================== -->
+  <aside class="audio-dock hidden-dock" id="audio-dock" aria-label="التحكم في الموسيقى">
+    <div class="vinyl-disc" id="vinyl-disc" title="تشغيل / إيقاف الموسيقى"></div>
+    <div class="audio-meta">
+      <span class="audio-title">أغنيتنا ♥</span>
+      <span class="audio-time-badge">
+        <span class="eq-bars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span id="audio-status-text">شغالة علشانك</span>
+      </span>
+    </div>
+    <button class="audio-btn" id="toggle-audio-btn" type="button" aria-label="تشغيل أو إيقاف الموسيقى">
+      <span id="audio-icon">❚❚</span>
+    </button>
+  </aside>
+
+  <!-- ========================================================================
+       محتوى القصة الرومانسية (بالعامية المصرية الكاملة)
+       ======================================================================== -->
+  <main>
+
+    <!-- الهيرو: البداية وأمنية ١١/١١ -->
+    <section class="story-section hero-section" id="chapter-wish">
+      <div class="hero-bg-watermark" aria-hidden="true">١١:١١</div>
+
+      <svg class="hero-ornament-top floating-rose" viewBox="0 0 120 120" aria-hidden="true">
+        <use href="#burgundy-rose-bloom" />
+      </svg>
+
+      <div class="hero-date-pill reveal-up">
+        <span>🌹</span>
+        <span>١١ · ١١ · حكاية حبنا</span>
+        <span>🌹</span>
+      </div>
+
+      <h2 class="hero-headline-ar reveal-up delay-1">
+        لما قولتلك بحبك.. كان قصدي إني بحبك للأبد ولآخر نفس في عمري ♥
+      </h2>
+
+      <p class="hero-sub-ar reveal-up delay-2">
+        بيقولوا إن في يوم ١١/١١ السما بتستجيب للأماني.. بس الحقيقة إن ربنا استجاب لأمنيتي من يوم ما دخلتي حياتي. إنتي مش
+        بس حبيبتي، إنتي أماني، وراحتي، وضحكة عمري اللي مبعرفش أفرح من غيرها.
+      </p>
+
+      <a href="#chapter-beauty" class="hero-scroll-cue reveal-up delay-3">
+        <span>انزلي تحت وشوفي قد إيه بحبك</span>
+        <span class="scroll-mouse" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- الفصل الأول: جمالها اللي خطف قلبي -->
+    <section class="story-section" id="chapter-beauty">
+      <div class="section-heading-wrap reveal-up">
+        <span class="chapter-tag">الفصل الأول · سحر جمالك</span>
+        <h2 class="section-main-title">ملامحك اللي بتخطف قلبي كل مرة كأني بشوفك لأول مرة</h2>
+      </div>
+
+      <div class="beauty-grid">
+        <!-- البرواز الرئيسي مع الورد -->
+        <div class="portrait-stage reveal-scale">
+          <svg class="frame-rose frame-rose--top-right floating-rose bloom-svg" viewBox="0 0 120 120"
+            aria-hidden="true">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+
+          <svg class="frame-rose frame-rose--bottom-left floating-rose bloom-svg" viewBox="0 0 120 120"
+            aria-hidden="true">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+
+          <div class="portrait-arch-frame" id="tilt-portrait" data-lightbox="img/IMG-20261030-WA0014.jpg"
+            data-caption="أحلى ملامح شافتها عيني في الدنيا كلها ♥">
+            <div class="portrait-img-wrapper">
+              <img src="img/IMG-20261030-WA0014.jpg" alt="حبيبتي وأجمل بنت في عيوني" />
+              <div class="portrait-caption-overlay">
+                <p class="ar-script">أحلى ملامح شافتها عيني في الدنيا ♥</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- كروت صغيرة تحت الصورة للموبايل والديسكتوب بدون ما تغطي الوش -->
+          <div class="beauty-pills-row">
+            <button type="button" class="beauty-pill" data-burst="true">
+              <span>✦ سحر عيونك</span>
+              <small>وطن برجع ألاقي نفسي فيه</small>
+            </button>
+            <button type="button" class="beauty-pill" data-burst="true">
+              <span>✦ رقتك وطلتك</span>
+              <small>مفيش وردة تنافس جمالك</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- كلام عن جمالها بالعامية المصرية -->
+        <div class="beauty-copy reveal-up">
+          <p class="lead-ar">
+            عارفة إيه أكتر حاجة بتسحرني فيكي؟ إن جمالك مش بس في ملامحك الهادية اللي بترد فيا الروح.. جمالك في طيبة قلبك،
+            في لمعة عينيكي لما بتفرحي، وفي الدفا والأمان اللي بحسهم بمجرد ما بتكوني جمبي.
+          </p>
+
+          <div class="beauty-traits">
+            <article class="trait-card active-trait" data-burst="true">
+              <div class="trait-header">
+                <h3 class="trait-title">
+                  <span>🌹</span>
+                  <span>بصة عيونك</span>
+                </h3>
+                <span class="trait-num">٠١</span>
+              </div>
+              <p class="trait-quote">
+                "لما ببص في عيونك بنسى زحمة الدنيا كلها، وبحس إن ربنا عوضني بيكي عن كل حاجة.. عيونك فيها أمان الدنيا
+                كله."
+              </p>
+            </article>
+
+            <article class="trait-card" data-burst="true">
+              <div class="trait-header">
+                <h3 class="trait-title">
+                  <span>✨</span>
+                  <span>ضحكتك اللي بتحيي قلبي</span>
+                </h3>
+                <span class="trait-num">٠٢</span>
+              </div>
+              <p class="trait-quote">
+                "ضحكتك دي هي الشمس اللي بتنور يومي.. لو الدنيا كلها مقفلة في وشي، ابتسامة واحدة منك كفيلة تخلي قلبي يطير
+                من الفرحة."
+              </p>
+            </article>
+
+            <article class="trait-card" data-burst="true">
+              <div class="trait-header">
+                <h3 class="trait-title">
+                  <span>🤍</span>
+                  <span>روحك وحنيتك</span>
+                </h3>
+                <span class="trait-num">٠٣</span>
+              </div>
+              <p class="trait-quote">
+                "إنتي مش بس أجمل بنت عيني شافتها، إنتي أحن قلب لمس روحي.. وجودك جمبي بيخليني أحسن، وأقوى، وأسعد إنسان في
+                الكون."
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الفصل الثاني: ألبوم صورنا وذكرياتنا (الأربع صور كاملة) -->
+    <section class="story-section" id="chapter-memories">
+      <div class="section-heading-wrap reveal-up">
+        <span class="chapter-tag">الفصل الثاني · أحلى لحظاتنا سوا</span>
+        <h2 class="section-main-title">كل صورة لينا مع بعض وراها نبضة قلب وحكاية عمر</h2>
+        <p class="section-sub-title">دوسي على أي صورة عشان تشوفيها بحجم كبير مع كلامي ليكي ♥</p>
+      </div>
+
+      <div class="memories-gallery">
+        <!-- الصورة الأولى -->
+        <article class="memory-card reveal-up delay-1" data-burst="true" data-lightbox="img/IMG-20261030-WA0014.jpg"
+          data-caption="قربك مني هو راحتي وأماني.. أحلى صدفة وأغلى نصيب في حياتي ♥">
+          <div class="memory-img-box">
+            <img src="img/IMG-20261030-WA0014.jpg" alt="صورتنا سوا ١" loading="lazy" />
+            <span class="memory-badge">نبضة قلبي ♥</span>
+          </div>
+          <div class="memory-content">
+            <h3 class="memory-title">قربك هو راحتي</h3>
+            <p class="memory-desc">
+              "أحلى لحظة في يومي هي اللحظة اللي بكون فيها جمبك وبشوف لمعة عيونك الحلوة دي."
+            </p>
+          </div>
+        </article>
+
+        <!-- الصورة الثانية -->
+        <article class="memory-card reveal-up delay-2" data-burst="true" data-lightbox="img/IMG-20260809-WA0000.jpg"
+          data-caption="أي طريق بمشيه وإنتي جمبي بيبقى أحلى مشوار في عمري كله ♥">
+          <div class="memory-img-box">
+            <img src="img/IMG-20260809-WA0000.jpg" alt="صورتنا سوا ٢" loading="lazy" />
+            <span class="memory-badge">رفيقة عمري 🌹</span>
+          </div>
+          <div class="memory-content">
+            <h3 class="memory-title">مشوار عمرنا سوا</h3>
+            <p class="memory-desc">
+              "مش مهم رايحين فين، المهم إن إيدك في إيدي وإننا مع بعض في كل خطوة وفي كل طريق."
+            </p>
+          </div>
+        </article>
+
+        <!-- الصورة الثالثة -->
+        <article class="memory-card reveal-up delay-1" data-burst="true" data-lightbox="img/IMG-20260823-WA0055.jpg"
+          data-caption="شياكتك ورقتك وطلتك اللي بتخطف قلبي في كل مكان بنروحه سوا ♥">
+          <div class="memory-img-box">
+            <img src="img/IMG-20260823-WA0055.jpg" alt="صورتنا سوا ٣" loading="lazy" />
+            <span class="memory-badge">أميرتي ✨</span>
+          </div>
+          <div class="memory-content">
+            <h3 class="memory-title">أجمل طلة في عيوني</h3>
+            <p class="memory-desc">
+              "ببقى ماشي جمبك وأنا فخور ومبسوط إن القمر دي حبيبتي وبنتي وشريكة حياتي كلها."
+            </p>
+          </div>
+        </article>
+
+        <!-- الصورة الرابعة -->
+        <article class="memory-card reveal-up delay-2" data-burst="true" data-lightbox="img/IMG-20260906-WA0001.jpg"
+          data-caption="في وسط أنوار الدنيا كلها، مفيش نور بيخطف عيني غير نور وشك الهادي ♥">
+          <div class="memory-img-box">
+            <img src="img/IMG-20260906-WA0001.jpg" alt="صورتنا سوا ٤" loading="lazy" />
+            <span class="memory-badge">نور عيني 🤍</span>
+          </div>
+          <div class="memory-content">
+            <h3 class="memory-title">نور أيامي كلها</h3>
+            <p class="memory-desc">
+              "براءتك ورقة ملامحك في الصورة دي بتلخص كل الجمال والحنية اللي ربنا خلقهم فيكي."
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- الفصل الثالث: عداد الوقت من ١ مايو ٢٠٢٦ الساعة ٢:٣٠ الفجر لحد دلوقتي -->
+    <section class="story-section" id="chapter-counter">
+      <div class="counter-sanctuary reveal-scale" data-burst="true">
+        <div class="counter-header">
+          <span class="chapter-tag" style="color: #F3C68F; margin-bottom: 0.35rem;">الفصل الثالث · عداد عمرنا سوا</span>
+          <h2 class="counter-main-title">كل ثانية عدت وإنتي في حياتي هي عمر جديد اتكتبلي معاكِ</h2>
+          <div class="counter-start-badge">
+            <span>🌹</span>
+            <span>من ١ مايو ٢٠٢٦ · الساعة ٢:٣٠ الفجر</span>
+            <span>🌹</span>
+          </div>
+        </div>
+
+        <!-- شبكة العداد المباشر (أيام - ساعات - دقايق - ثواني) -->
+        <div class="duration-grid" id="duration-grid" aria-live="polite">
+          <div class="duration-box">
+            <span class="duration-value" id="counter-days">٠</span>
+            <span class="duration-label">يوم من الحب</span>
+          </div>
+
+          <div class="duration-box">
+            <span class="duration-value" id="counter-hours">٠</span>
+            <span class="duration-label">ساعة في قربك</span>
+          </div>
+
+          <div class="duration-box">
+            <span class="duration-value" id="counter-minutes">٠</span>
+            <span class="duration-label">دقيقة حنية</span>
+          </div>
+
+          <div class="duration-box duration-box--pulse">
+            <span class="duration-value" id="counter-seconds">٠</span>
+            <span class="duration-label">ثانية بتعشقك</span>
+          </div>
+        </div>
+
+        <div class="duration-months-summary" id="counter-months-summary">
+          حكايتنا بتكبر في كل دقة قلب ♥
+        </div>
+
+        <div class="counter-ar-quote">
+          "من يوم ١ مايو ٢٠٢٦ الساعة ٢:٣٠ الفجر.. اللحظة اللي ابتدى فيها عمري بجد لما بقيتي معايا. كل دقيقة وكل ثانية
+          بتعدي وإنتي جمبي بتأكدلي إنك أحلى عوض من ربنا، وإن العداد ده هيفضل يعد حبنا لحد آخر نفس في عمري ♥"
+        </div>
+      </div>
+    </section>
+
+    <!-- الفصل الرابع: كلام من نص قلبي بالعامية المصرية -->
+    <section class="story-section" id="chapter-quotes">
+      <div class="section-heading-wrap reveal-up">
+        <span class="chapter-tag">الفصل الرابع · كلام من نص قلبي</span>
+        <h2 class="section-main-title">حاجات بحس بيها كل ما تيجي على بالي</h2>
+        <p class="section-sub-title">بالعامية كده ومن غير أي تزويق.. ده اللي في قلبي ليكي</p>
+      </div>
+
+      <div class="egyptian-quotes-grid">
+        <article class="eq-card reveal-up delay-1" data-burst="true">
+          <div>
+            <div class="eq-card-number">
+              <span>الوعد الأول · ١١/١١</span>
+              <span>🌹</span>
+            </div>
+            <p class="eq-quote-text">
+              "لو خيروني أعيد عمري من الأول ألف مرة، هختار كل طريق مشيته عشان في الآخر بيوديني ليكي.. إنتي الحاجة
+              الوحيدة الصح في وسط كل حاجة."
+            </p>
+          </div>
+          <div class="eq-quote-highlight">
+            <span>إنتي اختياري في كل يوم</span>
+            <span>♥</span>
+          </div>
+          <svg class="eq-card-rose-bg" viewBox="0 0 120 120">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+        </article>
+
+        <article class="eq-card reveal-up delay-2" data-burst="true">
+          <div>
+            <div class="eq-card-number">
+              <span>راحة قلبي · ١١/١١</span>
+              <span>🌹</span>
+            </div>
+            <p class="eq-quote-text">
+              "مبقاش يفرق معايا الدنيا شايلة إيه لبكرة، طالما إنتي معايا وفي ضهري.. صوتك لوحده بيطمن قلبي وبيخليني أحس
+              إن الدنيا كلها ضحكتلي."
+            </p>
+          </div>
+          <div class="eq-quote-highlight">
+            <span>أماني وراحتي وبيتي</span>
+            <span>♥</span>
+          </div>
+          <svg class="eq-card-rose-bg" viewBox="0 0 120 120">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+        </article>
+
+        <article class="eq-card reveal-up delay-1" data-burst="true">
+          <div>
+            <div class="eq-card-number">
+              <span>سحر تفاصيلك · ١١/١١</span>
+              <span>🌹</span>
+            </div>
+            <p class="eq-quote-text">
+              "كل تفصيلة فيكي حفظتها عن ظهر قلب.. ضحكتك، نظرة عينيكي، طريقة كلامك، وحتى سرحانك. إنتي نعمة كبيرة ربنا
+              خصني بيها لوحدي."
+            </p>
+          </div>
+          <div class="eq-quote-highlight">
+            <span>أجمل تفصيلة في حياتي</span>
+            <span>♥</span>
+          </div>
+          <svg class="eq-card-rose-bg" viewBox="0 0 120 120">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+        </article>
+
+        <article class="eq-card reveal-up delay-2" data-burst="true">
+          <div>
+            <div class="eq-card-number">
+              <span>عشرة العمر · ١١/١١</span>
+              <span>🌹</span>
+            </div>
+            <p class="eq-quote-text">
+              "أنا مش بحبك عشان إنتي حلوة وبس، أنا بحبك عشان روحي لقت راحتها معاكي.. وعشان إنتي البنت الوحيدة اللي بتمنى
+              أكمل معاها باقي عمري كله."
+            </p>
+          </div>
+          <div class="eq-quote-highlight">
+            <span>حبيبتي النهاردة وبكرة وللأبد</span>
+            <span>♥</span>
+          </div>
+          <svg class="eq-card-rose-bg" viewBox="0 0 120 120">
+            <use href="#burgundy-rose-bloom" />
+          </svg>
+        </article>
+      </div>
+    </section>
+
+    <!-- الفصل الخامس: جواب يوم ١١/١١ -->
+    <section class="story-section" id="chapter-letter">
+      <div class="section-heading-wrap reveal-up">
+        <span class="chapter-tag">الفصل الخامس · جواب حبنا</span>
+        <h2 class="section-main-title">جواب ليكي في يوم ١١/١١</h2>
+      </div>
+
+      <div class="letter-stage reveal-scale">
+        <article class="parchment-letter">
+          <header class="letter-stamp-row">
+            <div class="letter-postmark">
+              <div class="wax-mini">١١/١١</div>
+              <div>
+                <div class="letter-date-meta">يوم مميز · ١١ نوفمبر</div>
+                <div class="letter-date-sub">مختوم بورد عنابي ووعد لآخر العمر</div>
+              </div>
+            </div>
+
+            <svg width="54" height="54" viewBox="0 0 120 120" class="floating-rose" aria-hidden="true">
+              <use href="#burgundy-rose-bloom" />
+            </svg>
+          </header>
+
+          <h3 class="letter-salutation-ar">
+            إلى حبيبتي، ونور عيني، وأغلى إنسانة في حياتي كلها.. ♥
+          </h3>
+
+          <div class="letter-body-ar">
+            <p>
+              في اليوم المميز ده <strong>١١/١١</strong>، حبيت أكتبلك جواب يفضل ذكرى ما بينا.. جواب يقولك حاجة يمكن
+              الكلام العادي مش دايمًا بيكفي يوصفها.
+            </p>
+            <p>
+              من أول يوم دخلتي فيه حياتي، وإنتي غيرتي معنى كل حاجة عندي. خليتي للأيام طعم، وللوقت قيمة، وللمستقبل حلم
+              واحد بس: <strong>إننا نكون سوا</strong>. لما ببص لصورنا سوا، بشوف فرحتي الحقيقية، وبشوف البنت اللي خطفت
+              قلبي بجمالها وبرقتها وبحنيتها اللي ملهاش زي.
+            </p>
+            <p>
+              عايزك تعرفي وتكوني متأكدة في يوم ١١/١١ وفي كل يوم بعده: <strong>أنا بحبك إنتي، وإنتي الوحيدة اللي عايز
+                أكمل معاها للأبد</strong>. مهما عدت الأيام والسنين، هيفضل قلبي يختارك إنتي في كل دقة.
+            </p>
+          </div>
+
+          <blockquote class="letter-highlight-box">
+            "أنا هفضل أحبك على طول، عشان دي الحاجة الوحيدة اللي عايز أعملها في دنيتي.. مش عايز أنام، أنا بس عايز أفضل
+            أحبك، وكنت أقصد كل حرف قولتهولك.. لما قولتلك بحبك، كان قصدي إني بحبك للأبد ولآخر نفس في عمري ♥"
+          </blockquote>
+
+          <footer class="letter-signature">
+            <div class="signature-ar">
+              بحبك النهاردة وبكرة ولآخر العمر.. كل ١١/١١ وإنتي معايا وفي قلبي ♥
+            </div>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- الختام: أمنية ١١/١١ ومطر الورد -->
+    <section class="story-section finale-section" id="chapter-finale">
+      <div class="wish-interactive-card reveal-up">
+        <svg width="76" height="76" viewBox="0 0 120 120" class="floating-rose" style="margin-bottom: 0.65rem;">
+          <use href="#burgundy-rose-bloom" />
+        </svg>
+
+        <div class="chapter-tag">أمنية العمر · ١١:١١</div>
+
+        <h2 class="finale-title">
+          تمني أمنية دلوقتي وإحنا مع بعض..
+        </h2>
+
+        <p class="finale-sub">
+          دوسي على الزرار ده عشان الدنيا كلها تمطر ورد علشانك، وتقرأي وعدي الأخير ليكي في يوم ١١/١١ ♥
+        </p>
+
+        <button class="bloom-trigger-btn" id="shower-roses-btn" type="button">
+          <span>🌹</span>
+          <span>افرشلي الدنيا ورد — أمنية ١١/١١</span>
+          <span>✨</span>
+        </button>
+
+        <div class="secret-wish-reveal" id="secret-wish-reveal">
+          <div class="secret-wish-box">
+            "وعد مني ليكي في يوم ١١/١١.. هفضل سندك، وحبيبك، وأمانك، وهفضل أحبك بنفس الشغف واللهفة دي النهاردة وبكرة ولحد
+            آخر نفس في عمري.. بحبك يا أغلى ما في حياتي ♥"
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- عارض الصور بالحجم الكامل للموبايل والديسكتوب -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="إغلاق الصورة">✕</button>
+    <div class="lightbox-inner">
+      <img src="" alt="صورتنا سوا" id="lightbox-img" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
